@@ -1,7 +1,7 @@
 import IRoute from "../interfaces/route";
 import ChangePasswordPage from "../pages/auth/ChangePassword";
 import ForgotPasswordPage from "../pages/auth/ForgotPassword";
-import LoginPage from "../pages/auth/Login";
+import Login from "../pages/auth/Login";
 import LogoutPage from "../pages/auth/Logout";
 import RegisterPage from "../pages/auth/Signup";
 import ResetPasswordPage from "../pages/auth/ResetAccount";
@@ -25,7 +25,7 @@ const routes: IRoute[] = [
     {
         path: '/login',
         exact: true,
-        component: LoginPage,
+        component: Login,
         name: 'Login Page',
         protected: false
     },

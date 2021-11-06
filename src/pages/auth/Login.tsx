@@ -9,7 +9,7 @@ import IPageProps from '../../interfaces/page';
 import firebase from 'firebase';
 import { SignInWithSocialMedia } from './modules';
 
-const LoginPage: React.FunctionComponent<IPageProps> = props => {
+const Login: React.FunctionComponent<IPageProps> = props => {
     const [authenticating, setAuthenticating] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -94,7 +94,7 @@ const LoginPage: React.FunctionComponent<IPageProps> = props => {
             {/* registerまたはforgotpasswordへ遷移 */}
             <small>
                 <p className='m-1 text-center'>登録は<Link to="/register">こちら</Link></p>
-                <p className='m-1 text-center'><Link to="/forget">パスワードを忘れた場合はこちら</Link></p>
+                <p className='m-1 text-center'><Link to="/forgotPassword">パスワードを忘れた場合はこちら</Link></p>
             </small>
 
 
@@ -126,4 +126,4 @@ const LoginPage: React.FunctionComponent<IPageProps> = props => {
     );
 }
 
-export default LoginPage;
+export default Login;

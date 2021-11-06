@@ -13,8 +13,8 @@ const HomePage: React.FunctionComponent<IPageProps> = props => {
     return (
         <div className="App">
             <Container>
-                <Card className='w-30 bg-white text-dark'>
-                    <CardBody className='w-10 h-10'>
+                <div className='bg-white text-dark'>
+                    <CardBody className='w-20 h-10'>
                         <PiePlot />
                     </CardBody>
                     <CardBody>
@@ -26,11 +26,11 @@ const HomePage: React.FunctionComponent<IPageProps> = props => {
                     {/* <CardBody>
                         <ApexChart />
                     </CardBody> */}
-                </Card>
-                <Card className='w-30 bg-white text-dark text-center'>
+                </div>
+                <Card className='bg-black text-white'>
                     <CardBody>
                         <p>
-                            パスワードの変更の場合 <Link to="/change">here</Link>.
+                            パスワードの変更の場合 <Link to="/changePassword">here</Link>.
                         </p>
                         <p>
                             ログアウトは<Link to='/logout'>こちらをクリックしてください</Link>
