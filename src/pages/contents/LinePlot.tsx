@@ -32,7 +32,7 @@ export const LinePlot: React.FC = () => {
             <Line 
                 data={data} 
                 width={100}
-                height={100}
+                height={50}
             />
         </div>
         // <div className="mx-auto bg-black max-w-min">

@@ -49,8 +49,8 @@ export const BarPlot: React.FC = () => {
         <div>
             <Bar 
                 data={data} 
-                width={200} 
-                height={200} 
+                width={100} 
+                height={50} 
             />
         </div>
     )

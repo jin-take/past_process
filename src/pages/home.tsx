@@ -8,7 +8,7 @@ import { PiePlot } from './contents/PiePlot';
 import { BarPlot } from './contents/BarPlot';
 // import { Chart } from './contents/ApexChart';
 
-import ActivityLogs from "./dashboard/ActivityLogs"
+import ActivityLogs from "./dashboard/ActivityLogs";
 
 const HomePage: React.FunctionComponent<IPageProps> = props => {
     return (
