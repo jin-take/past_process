@@ -44,13 +44,13 @@ const options = {
 }
 
 // レンダリング
-export const BarPlot: React.FC = () => {
+export const BarPlotExample: React.FC = () => {
     return (
         <div>
             <Bar 
                 data={data} 
-                width={100} 
-                height={50} 
+                width={200} 
+                height={200} 
             />
         </div>
     )

@@ -4,8 +4,8 @@ import ForgotPasswordPage from "../pages/auth/ForgotPassword";
 import Login from "../pages/auth/Login";
 import LogoutPage from "../pages/auth/Logout";
 import RegisterPage from "../pages/auth/Signup";
-import ResetPasswordPage from "../pages/auth/ResetAccount";
 import HomePage from "../pages/home";
+import ActivityLogs from "../pages/dashboard/ActivityLogs";
 
 const routes: IRoute[] = [
     {
@@ -51,12 +51,12 @@ const routes: IRoute[] = [
         protected: false
     },
     {
-        path: '/resetAccount',
+        path: '/activitylogs',
         exact: true,
-        component: ResetPasswordPage,
-        name: 'Reset Password Page',
+        component: ActivityLogs,
+        name: 'Activity Logs',
         protected: false
-    }
+    },
 ];
 
 export default routes;

@@ -10,9 +10,9 @@ import firebase from 'firebase';
 import { SignInWithSocialMedia } from './modules';
 import { Card, CardBody, Container, CardHeader, CardFooter, CardTitle, CardText, Row, Col } from 'reactstrap';
 
-import { LinePlot } from '../contents/LinePlot';
-import { PiePlot } from '../contents/PiePlot';
-import { BarPlot } from '../contents/BarPlot';
+import { LinePlotExample } from '../contents/LinePlotExample';
+import { PiePlotExample } from '../contents/PiePlotExample';
+import { BarPlotExample } from '../contents/BarPlotExample';
 
 
 
@@ -78,9 +78,11 @@ const Login: React.FunctionComponent<IPageProps> = props => {
                 {/* ログインコンテンツ */}
                     <CardBody>
                         <h2 className="text-dark text-center">ログイン</h2>
-                        <CardTitle tag="h5">
+                        <CardTitle tag="h5" className="text-dark text-center">
                             メールアドレスまたはIDで、ログインしてください
                         </CardTitle>
+
+                        <br />
 
                         {/* IDまたはアドレス */}
                         <FormGroup>
@@ -170,7 +172,7 @@ const Login: React.FunctionComponent<IPageProps> = props => {
                 xs="6"
                 >
                     <CardBody>
-                        <PiePlot />
+                        <PiePlotExample />
                     </CardBody> 
                 </Col>
 
@@ -179,7 +181,7 @@ const Login: React.FunctionComponent<IPageProps> = props => {
                 sm="3"
                 >
                     <CardBody>
-                        <BarPlot />
+                        <BarPlotExample/>
                     </CardBody>
                 </Col>
             </Row>
@@ -192,8 +194,9 @@ const Login: React.FunctionComponent<IPageProps> = props => {
             <CardFooter tag="h5" className="text-center bg-dark">
                 {/* registerまたはforgotpasswordへ遷移 */}
                 <small>
-                    <p><Link to="/register">登録はこちら</Link></p>
-                    <p><Link to="/forgotPassword">パスワードを忘れた場合はこちら</Link></p>
+                    <p><Link to="/signup">登録はこちら</Link></p>
+                    <br />
+                    <p>パスワードを忘れた場合は<Link to="/forgotPassword">こちら</Link></p>
                 </small>
             </CardFooter>
             
