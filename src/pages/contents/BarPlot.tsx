@@ -28,7 +28,7 @@ const data = {
             'rgb(153, 102, 255)',
         ],
         // グラフの枠線の太さ
-        borderWidth: 5,
+        borderWidth: 3,
         },
     ],
 };

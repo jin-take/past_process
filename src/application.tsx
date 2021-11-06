@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { Spinner } from 'reactstrap';
 import AuthRoute from './components/AuthRoute';
 import { auth } from './config/firebase';
 import logging from './config/logging';
 import routes from './config/routes';
+
 
 
 export interface IApplicationProps { }
@@ -47,6 +49,7 @@ const Application: React.FunctionComponent<IApplicationProps> = props => {
                     />)}
             </Switch>
         </div>
+
     );
 }
 

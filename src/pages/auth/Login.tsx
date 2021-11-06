@@ -8,6 +8,13 @@ import logging from '../../config/logging';
 import IPageProps from '../../interfaces/page';
 import firebase from 'firebase';
 import { SignInWithSocialMedia } from './modules';
+import { Card, CardBody, Container, CardHeader, CardFooter, CardTitle, CardText, Row, Col } from 'reactstrap';
+
+import { LinePlot } from '../contents/LinePlot';
+import { PiePlot } from '../contents/PiePlot';
+import { BarPlot } from '../contents/BarPlot';
+
+
 
 const Login: React.FunctionComponent<IPageProps> = props => {
     const [authenticating, setAuthenticating] = useState<boolean>(false);
@@ -52,77 +59,145 @@ const Login: React.FunctionComponent<IPageProps> = props => {
     }
 
     return (
-        <AuthContainer header="ログイン">
-            {/* ID入力 */}
-            <FormGroup>
-                <Input 
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="メールアドレスまたはID"
-                    onChange={event => setEmail(event.target.value)}
-                    value={email}
-                />
-            </FormGroup>
+        <div>
+            <CardHeader tag="h2" className="text-center bg-dark">
+                Past Process
+            </CardHeader>
+            
+            <br /><br />
+
+            <Row>
+                <Col
+                className="bg-black"
+                md={{
+                    offset: 3,
+                    size: 6
+                }}
+                sm="12"
+                >
+                {/* ログインコンテンツ */}
+                    <CardBody>
+                        <h2 className="text-dark text-center">ログイン</h2>
+                        <CardTitle tag="h5">
+                            メールアドレスまたはIDで、ログインしてください
+                        </CardTitle>
+
+                        {/* IDまたはアドレス */}
+                        <FormGroup>
+                        <Input 
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="メールアドレスまたはID"
+                            onChange={event => setEmail(event.target.value)}
+                            value={email}
+                        />
+                        </FormGroup>
+
+                        {/* パスワード */}
+                        <FormGroup>
+                            <Input 
+                                autoComplete="new-password"
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="パスワード"
+                                onChange={event => setPassword(event.target.value)}
+                                value={password}
+                            />
+                        </FormGroup>
+
+                        {/* ログインボタン */}
+                        <Button
+                            disabled={authenticating}
+                            color="primary"
+                            block
+                            size="lg"
+                            onClick={() => signInWithEmailAndPassword()}
+                        >
+                            ログイン
+                        </Button>
+
+                        <br /><br />
+                    
+                        <Row>
+                            <Col
+                            className="bg-white"
+                            xs="6"
+                            >
+                                {/* googleのアカウントでログイン */}
+                                <Button
+                                    block
+                                    size="lg"
+                                    disabled={authenticating}
+                                    onClick={() => signInWithSocialMedia(Providers.google)}
+                                    style={{ backgroundColor:'#ea4335', borderColor:'#ea4335'}} 
+                                >
+                                    <i className="fab fa-google mr-2"></i> Sign in with Google
+                                </Button>
+                            </Col>
+
+                            <Col
+                            className="bg-white"
+                            xs="6"
+                            >
+                                {/* Githubのアカウントでログイン */}
+                                <Button
+                                    block
+                                    size="lg"
+                                    disabled={authenticating}
+                                    onClick={() => signInWithSocialMedia(Providers.github)}
+                                    style={{ backgroundColor:'gray', borderColor:'gray'}} 
+                                >
+                                    <i className="fab fa-github mr-2"></i> Sign in with Github
+                                </Button>
+                            </Col>
+                        </Row>
+                    </CardBody>
+                </Col>
+            </Row>
+            <Row>
+                <Col
+                className="bg-white"
+                sm="3"
+                xs="6"
+                >
+                </Col>
+
+                <Col
+                className="bg-white"
+                sm="3"
+                xs="6"
+                >
+                    <CardBody>
+                        <PiePlot />
+                    </CardBody> 
+                </Col>
+
+                <Col
+                className="bg-white"
+                sm="3"
+                >
+                    <CardBody>
+                        <BarPlot />
+                    </CardBody>
+                </Col>
+            </Row>
 
 
-            {/* パスワード入力 */}
-            <FormGroup>
-                <Input 
-                    autoComplete="new-password"
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="パスワード"
-                    onChange={event => setPassword(event.target.value)}
-                    value={password}
-                />
-            </FormGroup>
-
-            {/* ログインボタン */}
-            <Button
-                disabled={authenticating}
-                color="success"
-                block
-                onClick={() => signInWithEmailAndPassword()}
-            >
-                ログイン
-            </Button>
-
-            <br />
-
-            {/* registerまたはforgotpasswordへ遷移 */}
-            <small>
-                <p className='m-1 text-center'>登録は<Link to="/register">こちら</Link></p>
-                <p className='m-1 text-center'><Link to="/forgotPassword">パスワードを忘れた場合はこちら</Link></p>
-            </small>
 
 
-            <ErrorText error={error} />
-            <hr className="bg-info m-3" />
+            <br /><br />
 
-            {/* googleのアカウントでログイン */}
-            <Button
-                block
-                disabled={authenticating}
-                onClick={() => signInWithSocialMedia(Providers.google)}
-                style={{ backgroundColor:'#ea4335', borderColor: '#ea4335'}} 
-            >
-                <i className="fab fa-google mr-2"></i> Sign in with Google
-            </Button>
-
-            {/* Githubのアカウントでログイン */}
-            <Button
-                block
-                disabled={authenticating}
-                onClick={() => signInWithSocialMedia(Providers.github)}
-                style={{ backgroundColor:'gray', borderColor: 'gray'}} 
-            >
-                <i className="fab fa-github mr-2"></i> Sign in with Github
-            </Button>
-
-
-        </AuthContainer>
+            <CardFooter tag="h5" className="text-center bg-dark">
+                {/* registerまたはforgotpasswordへ遷移 */}
+                <small>
+                    <p><Link to="/register">登録はこちら</Link></p>
+                    <p><Link to="/forgotPassword">パスワードを忘れた場合はこちら</Link></p>
+                </small>
+            </CardFooter>
+            
+        </div>
     );
 }
 
