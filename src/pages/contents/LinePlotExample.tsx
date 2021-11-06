@@ -9,7 +9,7 @@ const data ={
             label: "１週間でのアウトプット数",
             backgroundColor: "#000000",
             borderColor: "#7fffd4",
-            pointBorderWidth: 20,
+            pointBorderWidth: 10,
             data: [3,5,10,6,3,12,8]
         }
     ]
@@ -26,7 +26,7 @@ const options = {
 }
 
 
-export const LinePlot: React.FC = () => {
+export const LinePlotExample: React.FC = () => {
     return (
         <div>
             <Line 

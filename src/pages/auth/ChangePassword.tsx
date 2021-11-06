@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Redirect, useHistory } from 'react-router-dom';
 import { Button, FormGroup, Input } from 'reactstrap';
 import AuthContainer from '../../components/AuthContainer';
@@ -6,6 +7,12 @@ import ErrorText from '../../components/ErrorText';
 import { auth } from '../../config/firebase';
 import logging from '../../config/logging';
 import IPageProps from '../../interfaces/page';
+import { Card, CardBody, Container, CardHeader, CardFooter, CardTitle, CardText, Row, Col } from 'reactstrap';
+
+import { LinePlotExample } from '../contents/LinePlotExample';
+import { PiePlotExample } from '../contents/PiePlotExample';
+import { BarPlotExample } from '../contents/BarPlotExample';
+
 
 const ChangePasswordPage: React.FunctionComponent<IPageProps> = props => {
     const [changing, setChanging] = useState<boolean>(false);
@@ -43,50 +50,113 @@ const ChangePasswordPage: React.FunctionComponent<IPageProps> = props => {
         return <Redirect to="/" />;
 
     return (
-        <AuthContainer header="Change Password">
-            <FormGroup>
-                <Input 
-                    autoComplete="new-password"
-                    type="password"
-                    name="oldPassword"
-                    id="oldPassword"
-                    placeholder="Current Password"
-                    onChange={event => setOld(event.target.value)}
-                    value={old}
-                />
-            </FormGroup>
-            <FormGroup>
-                <Input 
-                    autoComplete="new-password"
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="Enter Password"
-                    onChange={event => setPassword(event.target.value)}
-                    value={password}
-                />
-            </FormGroup>
-            <FormGroup>
-                <Input 
-                    autoComplete="new-password"
-                    type="password"
-                    name="confirm"
-                    id="confirm"
-                    placeholder="Confirm Password"
-                    onChange={event => setConfirm(event.target.value)}
-                    value={confirm}
-                />
-            </FormGroup>
-            <Button
-                disabled={changing}
-                color="success"
-                block
-                onClick={() => passwordChangeRequest()}
-            >
-                Change Password
-            </Button>
-            <ErrorText error={error} />
-        </AuthContainer>
+        <div>
+            <CardHeader tag="h2" className="text-center bg-dark">
+                Past Process
+            </CardHeader>
+            
+            <br /><br />
+
+            <Row>
+                <Col
+                className="bg-black"
+                md={{
+                    offset: 3,
+                    size: 6
+                }}
+                sm="12"
+                >
+                {/* ログインコンテンツ */}
+                    <CardBody>
+                        <h2 className="text-dark text-center">パスワードの変更</h2>
+                        <CardTitle tag="h5">
+                            メールアドレスまたはIDで、ログインしてください
+                        </CardTitle>
+
+                        <FormGroup>
+                            <Input 
+                                autoComplete="new-password"
+                                type="password"
+                                name="oldPassword"
+                                id="oldPassword"
+                                placeholder="現在のパスワード入れてください"
+                                onChange={event => setOld(event.target.value)}
+                                value={old}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input 
+                                autoComplete="new-password"
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="新たなパスワードを入れてください"
+                                onChange={event => setPassword(event.target.value)}
+                                value={password}
+                            />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input 
+                                autoComplete="new-password"
+                                type="password"
+                                name="confirm"
+                                id="confirm"
+                                placeholder="新たなパスワードの確認"
+                                onChange={event => setConfirm(event.target.value)}
+                                value={confirm}
+                            />
+                        </FormGroup>
+                        <Button
+                            disabled={changing}
+                            color="primary"
+                            block
+                            onClick={() => passwordChangeRequest()}
+                        >
+                            パスワードを変更
+                        </Button>
+                        <ErrorText error={error} />
+                    </CardBody>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col
+                className="bg-white"
+                sm="3"
+                xs="6"
+                >
+                </Col>
+
+                <Col
+                className="bg-white"
+                sm="3"
+                xs="6"
+                >
+                    <CardBody>
+                        <PiePlotExample />
+                    </CardBody> 
+                </Col>
+
+                <Col
+                className="bg-white"
+                sm="3"
+                >
+                    <CardBody>
+                        <BarPlotExample />
+                    </CardBody>
+                </Col>
+            </Row>
+
+
+            <br /><br />
+            <CardFooter tag="h5" className="text-center bg-dark">
+                {/* registerまたはforgotpasswordへ遷移 */}
+                <small>
+                    <p><Link to="/signup">登録はこちら</Link></p>
+                    <p><Link to="/forgotPassword">パスワードを忘れた場合はこちら</Link></p>
+                </small>
+            </CardFooter>
+        </div>
     );
 }
 
