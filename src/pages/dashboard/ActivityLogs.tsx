@@ -1,17 +1,8 @@
-// import React, { useEffect, useState } from 'react';
-// import { RouteComponentProps, useHistory } from 'react-router-dom';
 import { Card, CardBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
-// import AuthContainer from '../../components/AuthContainer';
-// import ErrorText from '../../components/ErrorText';
-// import { auth } from '../../config/firebase';
-// import logging from '../../config/logging';
-// import IPageProps from '../../interfaces/page';
-// import queryString from 'querystring';
 import { Row, Col, CardHeader, CardFooter } from 'reactstrap';
 import { PiePlotForm } from '../contents/PiePlotForm';
-
-
+//contents
 import { LinePlot } from '../contents/LinePlot';
 import { PiePlot } from '../contents/PiePlot';
 import { BarPlot } from '../contents/BarPlot';

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FormGroup, Input, Button } from 'reactstrap';
 import { db } from '../../config/firebase';
-import { Col, Row, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
 
 export const PiePlotForm: React.FC = () => {
   const [tasks, setTasks] = useState([{ id: "", inout: "", count: 0 }]);
@@ -21,7 +21,6 @@ export const PiePlotForm: React.FC = () => {
     console.log("a");
     console.log(num);
     console.log(input);
-    // db.collection("tasks").add({ count: num, inout: input });
     db.collection("tasks").add({
       inout: input,
       count: num
@@ -116,16 +115,6 @@ export const PiePlotForm: React.FC = () => {
             </Col>
           </Row>
         </Col>
-
-
-
-        {/* <Col
-          className="bg-light"
-          sm="2"
-          xs="6"
-        >
-        </Col> */}
-
 
 
         <Col

@@ -7,7 +7,6 @@ import logging from './config/logging';
 import routes from './config/routes';
 
 
-
 export interface IApplicationProps { }
 
 const Application: React.FunctionComponent<IApplicationProps> = props => {
