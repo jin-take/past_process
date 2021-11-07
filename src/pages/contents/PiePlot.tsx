@@ -1,4 +1,4 @@
-import {Pie, Doughnut } from 'react-chartjs-2'
+import {Pie } from 'react-chartjs-2'
 import React from 'react'
 
 const data = {
@@ -27,15 +27,6 @@ const data = {
     ]
 } 
 
-const options = {
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true
-            }
-        }]
-    }
-}
 
 export const PiePlot: React.FC = () => {
     return (
@@ -43,9 +34,8 @@ export const PiePlot: React.FC = () => {
             <Pie 
                 data={data} 
                 width={100}
-                height={50}
+                height={100}
             />
-            {/* <Doughnut data={data} /> */}
         </div>
     )
 }

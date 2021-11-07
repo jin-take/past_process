@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { Button, FormGroup, Input } from 'reactstrap';
-import AuthContainer from '../../components/AuthContainer';
-import ErrorText from '../../components/ErrorText';
+// import AuthContainer from '../../components/AuthContainer';
+// import ErrorText from '../../components/ErrorText';
 import { auth, Providers } from '../../config/firebase';
 import logging from '../../config/logging';
 import IPageProps from '../../interfaces/page';
 import firebase from 'firebase';
 import { SignInWithSocialMedia } from './modules';
-import { Card, CardBody, Container, CardHeader, CardFooter, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { CardBody, CardHeader, CardFooter, CardTitle, Row, Col } from 'reactstrap';
 
-import { LinePlotExample } from '../contents/LinePlotExample';
+// import { LinePlotExample } from '../contents/LinePlotExample';
 import { PiePlotExample } from '../contents/PiePlotExample';
 import { BarPlotExample } from '../contents/BarPlotExample';
 

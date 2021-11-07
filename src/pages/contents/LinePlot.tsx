@@ -15,16 +15,6 @@ const data ={
     ]
 }
 
-const options = {
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true
-            }
-        }]
-    }
-}
-
 
 export const LinePlot: React.FC = () => {
     return (
@@ -32,7 +22,7 @@ export const LinePlot: React.FC = () => {
             <Line 
                 data={data} 
                 width={100}
-                height={50}
+                height={100}
             />
         </div>
         // <div className="mx-auto bg-black max-w-min">
