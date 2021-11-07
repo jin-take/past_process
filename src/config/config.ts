@@ -1,6 +1,6 @@
 const config = {
     firebase: {
-        apiKey: "AIzaSyCXTCIj2l0JQ9Npwx2hZJdvNv-0sRzdPn4",
+        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
         authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
         databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
         projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,

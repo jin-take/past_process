@@ -7,8 +7,6 @@ import { auth } from '../../config/firebase';
 import logging from '../../config/logging';
 import IPageProps from '../../interfaces/page';
 import { CardBody, CardHeader, CardFooter, CardTitle, Row, Col } from 'reactstrap';
-
-// import { LinePlotExample } from '../contents/LinePlotExample';
 import { PiePlotExample } from '../contents/PiePlotExample';
 import { BarPlotExample } from '../contents/BarPlotExample';
 

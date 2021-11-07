@@ -25,9 +25,6 @@ export const LinePlotExample: React.FC = () => {
                 height={100}
             />
         </div>
-        // <div className="mx-auto bg-black max-w-min">
-        //     <Line data={data} height={400} width={500} />
-        // </div>
     )
 }
 

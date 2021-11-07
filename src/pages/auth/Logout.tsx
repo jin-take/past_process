@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'reactstrap';
-// import AuthContainer from '../../components/AuthContainer';
 import { auth } from '../../config/firebase';
 import logging from '../../config/logging';
 import IPageProps from '../../interfaces/page';
