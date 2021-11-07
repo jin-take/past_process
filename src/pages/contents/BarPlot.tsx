@@ -6,9 +6,9 @@ const data = {
     labels: ['1 月', '2 月', '3 月', '4 月', '5 月', '6 月', '7 月', '8 月', '9 月', '10 月', '11 月', '12 月'],
     datasets: [
         {
-        label: '月毎のアウトプット数',
+        label: '月ごとのアウトプット数',
         // データの値
-        data: [65, 59, 80, 81, 56, 55, 40, 20, 80, 92, 75, 55],
+        data: [30, 52, 10, 23, 59, 68, 30, 65, 30, 12, 52, 32],
         // グラフの背景色
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
@@ -33,15 +33,6 @@ const data = {
     ],
 };
 
-const options = {
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true
-            }
-        }]
-    }
-}
 
 // レンダリング
 export const BarPlot: React.FC = () => {
@@ -50,7 +41,7 @@ export const BarPlot: React.FC = () => {
             <Bar 
                 data={data} 
                 width={100} 
-                height={50} 
+                height={100} 
             />
         </div>
     )

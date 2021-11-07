@@ -1,11 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import AuthContainer from '../../components/AuthContainer';
+// import AuthContainer from '../../components/AuthContainer';
 import { auth } from '../../config/firebase';
 import logging from '../../config/logging';
 import IPageProps from '../../interfaces/page';
-import { Card, CardBody, Container, CardHeader, CardFooter, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { CardBody, CardHeader, CardTitle, Row, Col } from 'reactstrap';
 
 const LogoutPage: React.FunctionComponent<IPageProps> = props => {
     const history = useHistory();

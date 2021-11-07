@@ -6,23 +6,13 @@ const data ={
     labels: ["Mon","Tue","Wed","Thu","Fir","Sat","Sun"],
     datasets: [
         {
-            label: "１週間でのアウトプット数",
+            label: "１週間でのインプット数",
             backgroundColor: "#000000",
             borderColor: "#7fffd4",
             pointBorderWidth: 10,
-            data: [3,5,10,6,3,12,8]
+            data: [1,1,3,2,7,2,5]
         }
     ]
-}
-
-const options = {
-    scales: {
-        yAxes: [{
-            ticks: {
-                beginAtZero: true
-            }
-        }]
-    }
 }
 
 

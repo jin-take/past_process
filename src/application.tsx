@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { Spinner } from 'reactstrap';
 import AuthRoute from './components/AuthRoute';

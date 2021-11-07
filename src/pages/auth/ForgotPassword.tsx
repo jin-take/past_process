@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Button, FormGroup, Input } from 'reactstrap';
-import AuthContainer from '../../components/AuthContainer';
+// import AuthContainer from '../../components/AuthContainer';
 import ErrorText from '../../components/ErrorText';
 import { auth } from '../../config/firebase';
 import logging from '../../config/logging';
 import IPageProps from '../../interfaces/page';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { LinePlotExample } from '../contents/LinePlotExample';
-import { PiePlotExample } from '../contents/PiePlotExample';
+// import { PiePlotExample } from '../contents/PiePlotExample';
 import { BarPlotExample } from '../contents/BarPlotExample';
-import { Card, CardBody, Container, CardHeader, CardFooter, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { CardBody, CardHeader, CardFooter, CardTitle, Row, Col } from 'reactstrap';
 
 const ForgotPasswordPage: React.FunctionComponent<IPageProps> = props => {
     const [sending, setSending] = useState<boolean>(false);
