@@ -5,6 +5,7 @@ import IPageProps from '../interfaces/page';
 
 import { LinePlot } from './contents/LinePlot';
 import { PiePlot } from './contents/PiePlot';
+import { PiePlotForm } from './contents/PiePlotForm';
 import { BarPlot } from './contents/BarPlot';
 // import { Chart } from './contents/ApexChart';
 
@@ -12,11 +13,13 @@ import { BarPlot } from './contents/BarPlot';
 const HomePage: React.FunctionComponent<IPageProps> = props => {
     return (
         <div className="App">
+            <PiePlotForm />
             <Container>
                 <div className='bg-white text-dark'>
                     <CardBody className='w-20 h-10'>
                         <PiePlot />
                     </CardBody>
+                        
                     <CardBody>
                         <BarPlot />
                     </CardBody>

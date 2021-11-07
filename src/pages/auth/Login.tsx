@@ -93,7 +93,7 @@ const Login: React.FunctionComponent<IPageProps> = props => {
 
             {/* registerまたはforgotpasswordへ遷移 */}
             <small>
-                <p className='m-1 text-center'>登録は<Link to="/register">こちら</Link></p>
+                <p className='m-1 text-center'><Link to="/signup">登録はこちら</Link></p>
                 <p className='m-1 text-center'><Link to="/forgotPassword">パスワードを忘れた場合はこちら</Link></p>
             </small>
 
