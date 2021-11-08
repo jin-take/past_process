@@ -8,9 +8,9 @@
 インプット，アウトプット
 
 ### 各ページのイメージ
-<img src="https://github.com/jin237/past_process/blob/main/demo/LoginPage.jpeg" width=200px>
-<img src="https://github.com/jin237/past_process/blob/main/demo/MainPage1.jpeg" width=200px>
-<img src="https://github.com/jin237/past_process/blob/main/demo/MainPage2.jpeg" width=200px>
+<img src="https://github.com/jin237/past_process/blob/main/demo/LoginPage.jpeg" width=400px>
+<img src="https://github.com/jin237/past_process/blob/main/demo/MainPage1.jpeg" width=400px>
+<img src="https://github.com/jin237/past_process/blob/main/demo/MainPage2.jpeg" width=400px>
 
 
 ### 環境
